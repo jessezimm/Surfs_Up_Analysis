@@ -16,25 +16,25 @@ The three key takeaways from this analysis are listed below.
 Given a sufficient number of observations, the warm mean temperature, and the limited dispersion around the mean, the investor should feel comfortable investing in the icecream shop. Other variables such as precipitation and population could further inform the investor's decision. These additional queries below can be used to collect the summary statistics of precipitation for the months of December and June.
 
 December Precipitation:  
-def prcp_monthly():
-    results = session.query(Measurement.tobs).\
-      filter(extract('month', Measurement.prcp) == 12).all()
-    prcps = list(np.ravel(results))
-    print(prcps)
-    return prcps
-prcps = list(np.ravel(prcp_monthly()))
-Dec_prcps = {'Dec_prcps': list(prcps)}
-Dec_df = pd.DataFrame(data=Dec_prcps)
+def prcp_monthly():  
+    results = session.query(Measurement.tobs).\  
+      filter(extract('month', Measurement.prcp) == 12).all()  
+    prcps = list(np.ravel(results))  
+    print(prcps)  
+    return prcps  
+prcps = list(np.ravel(prcp_monthly()))  
+Dec_prcps = {'Dec_prcps': list(prcps)}  
+Dec_df = pd.DataFrame(data=Dec_prcps)  
 Dec_df.describe()  
   
 June Precipitation:  
-def prcp_monthly():
-    results = session.query(Measurement.tobs).\
-      filter(extract('month', Measurement.prcp) == 6).all()
-    prcps = list(np.ravel(results))
-    print(prcps)
-    return prcps
-prcps = list(np.ravel(prcp_monthly()))
-June_prcps = {'June_prcps': list(prcps)}
-June_df = pd.DataFrame(data=June_prcps)
-June_df.describe()   
+def prcp_monthly():  
+    results = session.query(Measurement.tobs).\  
+      filter(extract('month', Measurement.prcp) == 6).all()  
+    prcps = list(np.ravel(results))  
+    print(prcps)  
+    return prcps  
+prcps = list(np.ravel(prcp_monthly()))  
+June_prcps = {'June_prcps': list(prcps)}  
+June_df = pd.DataFrame(data=June_prcps)  
+June_df.describe()    
