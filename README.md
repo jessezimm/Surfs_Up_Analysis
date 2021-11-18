@@ -14,14 +14,14 @@ The three key takeaways from this analysis are listed below.
 ## Summary
 Given a sufficient number of observations, the warm mean temperature, and the limited dispersion around the mean, the investor should feel comfortable investing in the icecream shop. Other variables such as precipitation and population could further inform the investor's decision. These additional queries below can be used to collect the summary statistics of precipitation for the months of December and June.
 
-December Precipitation:
-prev_year = dt.date(2017, 12, 1) - dt.timedelta(days=31)
-results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= prev_year).all()
-df = pd.DataFrame(results, columns=['date','precipitation'])
-df.describe()
-
-June Precipitation:
-prev_year = dt.date(2017, 6, 1) - dt.timedelta(days=30)
-results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= prev_year).all()
-df = pd.DataFrame(results, columns=['date','precipitation'])
-df.describe()
+December Precipitation:  
+prev_year = dt.date(2017, 12, 1) - dt.timedelta(days=31)  
+results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= prev_year).all()  
+df = pd.DataFrame(results, columns=['date','precipitation'])  
+df.describe()  
+  
+June Precipitation:  
+prev_year = dt.date(2017, 6, 1) - dt.timedelta(days=30)  
+results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= prev_year).all()  
+df = pd.DataFrame(results, columns=['date','precipitation'])  
+df.describe()  
